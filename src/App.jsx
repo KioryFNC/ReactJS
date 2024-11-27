@@ -33,8 +33,12 @@ const posts = [
       { type: 'paragraph', content: 'Fala galera 👋' },
       { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
       { type: 'link', content: 'jane.design/doctorcare' },
+
+      //  <a href="">#novoprojeto</a>{' '}
+      //  <a href="">#nlw</a>{' '}
+      //  <a href="">#rocketseat</a>
     ],
-    publishedAt: new Date('2024-11-10 20:00:00'),
+    publishedAt: new Date('2024-11-27 17:00:00'),
   },
 ];
 
