@@ -7,6 +7,7 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 import { useState } from 'react';
 
+// a baixo estou usando a desestruturação em ingles destructuring, e pegando apenas oque vou usar no caso author, publishedAt e content, e onde eu quero chamar ele eu só chamo entre {}, mas pode fazer sem desestruturar que é na função chamar somente o (props) ao inves de ({author, ..., ...}) e na hora que for chamar a props tem que colocar props.author ou o nome que vc quer chamar tipo assim <strong>{props.author.name}</strong> se fizer a desestruturação é só colocar direto <strong>{author.name}</strong>
 
 export function Post({author, publishedAt, content}) {
   const [comments, setComments] = useState([
