@@ -1,11 +1,18 @@
 import { ThumbsUp, Trash } from 'phosphor-react'
 import styles from './Comment.module.css'
 import { Avatar } from './avatar'
+import { useState } from 'react'
 
 // a baixo estou usando a desestruturação em ingles destructuring, e pegando apenas oque vou usar no caso author, publishedAt e content, e onde eu quero chamar ele eu só chamo entre {}, mas pode fazer sem desestruturar que é na função chamar somente o (props) ao inves de ({author, ..., ...}) e na hora que for chamar a props tem que colocar props.author ou o nome que vc quer chamar tipo assim  <p>{props.content}</p> se fizer a desestruturação é só colocar direto  <p>{content}</p>
 export function Comment({content, onDeleteComment}) {
+  const [likeCount, setLikeCount] = useState(0);
+
   function handleDeleteComment() {
     onDeleteComment(content)
+  }
+
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
   }
 
   return(
@@ -27,9 +34,9 @@ export function Comment({content, onDeleteComment}) {
           <p>{content}</p>
         </div>
         <footer>
-          <button>
+          <button onClick={handleLikeComment}>
             <ThumbsUp />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
